@@ -1,0 +1,11 @@
+<%= render :partial => 'layouts/navbar' %>
+
+<h1><%= @category.name %></h1>
+
+<p><%= @category.description %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_category_path(@category) %></li>
+  <li><%= button_to "Destroy", category_path(@category),method: :delete %></li>
+  
+</ul>
