@@ -19,9 +19,18 @@
   </div>
 
   <div>
+    <%= form.label :category_id %><br>
+    <%= form.collection_select :category_id, Category.all, :id, :name %>
+
+    <% @article.errors.full_messages_for(:category_id).each do |message| %>
+    <%= message %><br>
+    <% end %>
+  </div>
+
+  <div>
   <%= form.label :status %><br>
   <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-  </div>
+  </div><br>
 
 
   <div>
