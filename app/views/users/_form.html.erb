@@ -1,0 +1,53 @@
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+
+     <% @user.errors.full_messages_for(:name).each do |message| %>
+      <%= message %><br>
+      <% end %>
+  </div>
+
+  <div>
+    <%= form.label :surname %><br>
+    <%= form.text_area :surname %>
+
+    <% @user.errors.full_messages_for(:surname).each do |message| %>
+    <%= message %><br>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :dob %><br>
+    <%= form.date_field :dob %>
+
+    <% @user.errors.full_messages_for(:dob).each do |message| %>
+    <%= message %><br>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.email_field :email %>
+
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+    <%= message %><br>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %>
+
+    <% @user.errors.full_messages_for(:password).each do |message| %>
+    <%= message %><br>
+    <% end %>
+  </div>
+
+  <%= form.select :isadmin, ["true", "false"] %>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

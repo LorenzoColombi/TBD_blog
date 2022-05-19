@@ -1,0 +1,13 @@
+<%= render :partial => 'layouts/navbar' %>
+
+<h1><%= @user.name %> <%= @user.surname %></h1>
+
+<p>Email: <%= @user.email %></p>
+<p>Date of birth: <%= @user.dob %></p>
+<p>Is admin?: <%= @user.isadmin %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_user_path(@user) %></li>
+  <li><%= button_to "Destroy", user_path(@user),method: :delete %></li>
+  
+</ul>

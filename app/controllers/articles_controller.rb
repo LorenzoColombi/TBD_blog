@@ -5,7 +5,12 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @category = Category.find(@article.category_id)
+    if @article.category_id != nil then
+      @category = Category.find(@article.category_id)
+    else
+      @category = Category.new
+      @category.name = "No category"
+    end
   end
 
   def new

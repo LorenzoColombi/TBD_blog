@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   #all the CRUD route actions
   resources :categories
+  resources :users
   
 
   resources :articles do
