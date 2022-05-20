@@ -1,0 +1,22 @@
+
+<%= render :partial => 'layouts/navbar' %>
+
+<h1>Search results</h1>
+<p>This is my first App in RoR!</p>
+
+
+
+
+<h2>Articles list</h2>
+
+<ul>
+<% @articles.each do |item|
+    unless item.archived? %>
+  <li> 
+    <%= link_to item.title, article_path(item) %>
+  </li>
+<%  end
+   end %>
+</ul>
+<br>
+<%= link_to "New article", new_article_path%>

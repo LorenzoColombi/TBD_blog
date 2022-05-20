@@ -1,0 +1,48 @@
+<%= form_with model: @place do |form| %>
+
+    <div>
+    <%= form.label :city %><br>
+    <%= form.text_field :city %>
+
+     <% @place.errors.full_messages_for(:city).each do |message| %>
+      <%= message %><br>
+      <% end %>
+  </div>
+
+    <div>
+        <%= form.label :region %><br>
+        <%= form.text_field :region %>
+
+        <% @place.errors.full_messages_for(:region).each do |message| %>
+        <%= message %><br>
+        <% end %>
+    </div>
+
+     <div>
+        <%= form.label :state %><br>
+        <%= form.text_field :state %>
+
+        <% @place.errors.full_messages_for(:state).each do |message| %>
+        <%= message %><br>
+        <% end %>
+    </div>
+
+     <div>
+        <%= form.label :number %><br>
+        <%= form.number_field :number %>
+
+        <% @place.errors.full_messages_for(:number).each do |message| %>
+        <%= message %><br>
+        <% end %>
+    </div>
+
+
+
+
+
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

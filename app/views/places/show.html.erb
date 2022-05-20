@@ -1,0 +1,13 @@
+<%= render :partial => 'layouts/navbar' %>
+
+<h1><%= @place.city %> <%= @place.region %></h1>
+
+<p>State: <%= @place.state %></p>
+<p>Number: <%= @place.number %></p>
+
+
+<ul>
+  <li><%= link_to "Edit", edit_place_path(@place) %></li>
+  <li><%= button_to "Destroy", place_path(@place),method: :delete %></li>
+  
+</ul>

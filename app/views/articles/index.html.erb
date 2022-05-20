@@ -5,15 +5,21 @@
 
 <p>Our blog has <%= Article.public_count %> public articles</p>
 
+<h2>Search my column names</h2>
+<%= form_with url: "articles/search", method: :get do |form| %>
+  <%= form.label :query, "Search for:" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search" %>
+<% end %>
+
 <h2>Articles list</h2>
 
 <ul>
-<% @articles.each do |item|
-    unless item.archived? %>
+<% @articles.each do |item| %>
   <li> 
     <%= link_to item.title, article_path(item) %>
   </li>
-<%  end
+<%  
    end %>
 </ul>
 <br>

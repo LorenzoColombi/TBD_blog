@@ -42,6 +42,7 @@ class CategoriesController < ApplicationController
         redirect_to root_path, status: :see_other
     end
 
+    
     private
         def category_params
             params.require(:category).permit(:name, :description)

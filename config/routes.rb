@@ -12,10 +12,14 @@ Rails.application.routes.draw do
   # Defines the articles#index path route ("/articles")
   #get "/articles/:id", to: "articles#show"
 
+  #search route
+  get "/articles/search", to: "articles#search"
+
 
   #all the CRUD route actions
   resources :categories
   resources :users
+  resources :places
   
 
   resources :articles do

@@ -1,0 +1,19 @@
+<h1>Places</h1>
+
+
+<%= render :partial => 'layouts/navbar' %>
+
+<h2>Places list</h2>
+
+<ul>
+  <% @places.each do |place| %>
+    <li>Name:
+      <%= link_to place.city, place_path(place) %>
+      <p>City:  <%= place.city %> </p>
+      <p>Region:  <%= place.region %> </p>
+      <p>State:  <%= place.state %> </p>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New place", new_place_path%>

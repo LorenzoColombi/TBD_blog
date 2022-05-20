@@ -19,10 +19,14 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    print("XXX")
+    print(@article.category_id)
 
     if @article.save
       redirect_to @article
+      print("SAVED")
     else
+      print("NOT SAVED")
       render :new, status: :unprocessable_entity
     end
   end
@@ -47,6 +51,15 @@ class ArticlesController < ApplicationController
 
     redirect_to root_path, status: :see_other
   end
+
+  
+    #Non-standard methon (or maybe method that are in the wrong place)
+    def search
+      @articles = Article.search(params[:query])
+
+      render "result"
+   end
+      
 
   private
     def article_params
